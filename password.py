@@ -25,11 +25,7 @@ class TestFrame(wx.Frame):
         searchBtn = wx.Button(panel, -1, "search all")
 
         # self.show = wx.TextCtrl(panel, -1, "show text", size=(600, 400), style= wx.TE_MULTILINE)
-<<<<<<< HEAD
         self.show = wx.TextCtrl(panel, -1, size=(600, 400), style=wx.TE_MULTILINE|wx.TE_READONLY)
-=======
-        self.show = wx.TextCtrl(panel, -1, size=(600, 400), style=wx.TE_MULTILINE)
->>>>>>> c6ab365f2a296ece41254f3d3abe716a803bbcc9
 
     # do the layout
         mainSizer = wx.BoxSizer(wx.VERTICAL)
@@ -89,11 +85,7 @@ class TestFrame(wx.Frame):
     # choose filter
     def choose(self, text):
         self.show.Clear()
-<<<<<<< HEAD
         if(text != '' and text != ' '):
-=======
-        if(text != ''):
->>>>>>> c6ab365f2a296ece41254f3d3abe716a803bbcc9
             for i in range(len(list)):
                 searchObj = re.search(text, list[i], re.M | re.I)
                 # print(searchObj)
