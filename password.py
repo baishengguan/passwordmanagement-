@@ -1,4 +1,4 @@
-# User and Password Management software
+# User and Password management software
 
 import xlrd
 import wx
@@ -6,7 +6,7 @@ import re
 
 data = xlrd.open_workbook('E:\\password.xlsx')
 
-table = data.sheets()[0]  # 通过索引顺序获取
+table = data.sheets()[0]
 list = table.col_values(0)
 
 class TestFrame(wx.Frame):
