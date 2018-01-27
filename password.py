@@ -6,8 +6,10 @@ import wx.grid
 import re
 import os
 
+# auto read file path
 path = os.getcwd()
 list = os.listdir()
+
 if 'password.xlsx' in list:
     path = path + '\\password.xlsx'
     data = xlrd.open_workbook(path)
@@ -22,7 +24,11 @@ class TestFrame(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, None, -1, "password")
         self.panel = wx.Panel(self)
+        # add icon
+        self.icon = wx.Icon("favicon.ico", wx.BITMAP_TYPE_ICO)
+        self.SetIcon(self.icon)
 
+        # create the controls
         time = wx.StaticText(self.panel, -1, "2018.1.24 [guanbaisheng]", (100, 10), (160, -1), wx.ALIGN_CENTER)
 
         title = wx.StaticText(self.panel, -1, "密码管理")
