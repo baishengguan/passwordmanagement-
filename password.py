@@ -4,8 +4,15 @@ import xlrd
 import wx
 import wx.grid
 import re
+import os
 
-data = xlrd.open_workbook('E:\\password.xlsx')
+path = os.getcwd()
+list = os.listdir()
+if 'password.xlsx' in list:
+    path = path + '\\password.xlsx'
+    data = xlrd.open_workbook(path)
+
+# data = xlrd.open_workbook('E:\\password.xlsx')
 
 table = data.sheets()[0]
 list = table.col_values(0)
@@ -16,7 +23,6 @@ class TestFrame(wx.Frame):
         wx.Frame.__init__(self, None, -1, "password")
         self.panel = wx.Panel(self)
 
-    # create the controls
         time = wx.StaticText(self.panel, -1, "2018.1.24 [guanbaisheng]", (100, 10), (160, -1), wx.ALIGN_CENTER)
 
         title = wx.StaticText(self.panel, -1, "密码管理")
@@ -120,7 +126,6 @@ class TestFrame(wx.Frame):
                     j = j+1
                     if(j >= 10):
                         self.grid.AppendRows(10, 4)
-
                 # else:
                 #     print("Nothing found!!")
 
